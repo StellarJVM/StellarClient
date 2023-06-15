@@ -1,0 +1,351 @@
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase {
+  position: relative;
+}
+
+.showcase::after {
+  content: "";
+  height: 120vh;
+  width: 100%;
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 105px;
+  margin-left: -145px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+}
+
+.content .logo {
+  height: 200px; /* Increase the height */
+  width: 200px; /* Increase the width */
+  margin-top: -100px; /* Adjust the negative margin to center the logo vertically */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.content .title {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.grid-9 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.bg-light {
+  background: #28282b;
+  color: papayawhip;
+}
+
+.bg-dark {
+  background: #333;
+  color: #f4f4f4;
+}
+
+footer {
+  padding: 2.2rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+.f {
+  border-radius: 20px;
+  border: 2px solid #ddd;
+  padding: 1.2rem 1rem;
+}
+
+.download-btn-container {
+  margin-top: 0.5rem;
+}
+
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7d8082;
+  transition: all 0.15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all 0.2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: springgreen;
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #363535;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff00ff, #4b0082);
+  border-radius: 13px;
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.scroll-arrow a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #0f1923;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-arrow a:hover {
+  background-color: #ffefd5;
+  color: #0f1923;
+}
+
+.scroll-arrow a i {
+  transform: translateY(2px);
+}
+
+.text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Add the following code at the end of the existing CSS */
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .grid-9 {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    top: 5%;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .content .logo {
+    height: 120px;
+    width: 120px;
+    margin-top: -60px;
+  }
+
+  .content .title {
+    font-size: 1.8rem;
+  }
+
+  .text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .button_lg {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .grid-9 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content {
+    top: 15%;
+    margin-top: 80px;
+  }
+
+  .content .logo {
+    height: 150px;
+    width: 150px;
+    margin-top: -75px;
+  }
+
+  .content .title {
+    font-size: 2rem;
+  }
+
+  .button_lg {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Bigger Screens */
+@media (min-width: 1025px) {
+  .grid-9 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content {
+    top: 10%;
+    margin-top: 105px;
+    width: 300px;
+  }
+
+  .content .logo {
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+  }
+
+  .content .title {
+    font-size: 2.2rem;
+  }
+}
